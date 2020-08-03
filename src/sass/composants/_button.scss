@@ -1,0 +1,45 @@
+.button {
+  &__rep {
+    @include button;
+    border: 1px solid map_get($color, fifth);
+    color: map_get($color, fourth);
+    text-transform: uppercase;
+    background-color: map_get($color, third);
+    font-weight: bold;
+    line-height: 26px;
+  }
+  &__active {
+    @include button;
+    margin: 10px;
+    color: map_get($color, third);
+    background-color: map_get($color, primary);
+    line-height: 25px;
+    border: none;
+  }
+  &__passif {
+    @include button;
+    margin: 10px;
+    border: 1px solid map_get($color, fifth);
+    color: map_get($color, fourth_fade);
+    background-color: map_get($color, third);
+    line-height: 25px;
+  }
+  &__donation {
+    @include button;
+    font-family: Roboto;
+    font-size: 20px;
+    color: map_get($color, third);
+    background-color: map_get($color, primary);
+    border: none;
+    border-radius: 4px;
+  }
+  &__website {
+    @include button;
+    font-family: Roboto;
+    font-size: 20px;
+    color: map_get($color, fourth_fade);
+    background-color: map_get($color, third);
+    border: 1px solid map_get($color, fifth);
+    border-radius: 4px;
+  }
+}
