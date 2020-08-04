@@ -18,4 +18,8 @@ npx gulp watch
 
 // DIST:
 npx gulp build
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> dev

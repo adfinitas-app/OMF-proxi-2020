@@ -1,0 +1,52 @@
+.progress-bar {
+  &__custom-1 {
+    width: 13%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-2 {
+    width: 26%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-3 {
+    width: 39%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-4 {
+    width: 52%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-5 {
+    width: 65%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-6 {
+    width: 78%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-7 {
+    width: 91%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-8 {
+    width: 100%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-0 {
+    width: 0%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+  &__custom-9 {
+    width: 0%;
+    height: 8px;
+    background-color: map_get($color, primary);
+  }
+}

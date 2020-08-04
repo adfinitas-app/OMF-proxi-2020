@@ -9,7 +9,7 @@ const browsersync = require('browser-sync').create()
 const babel       = require('gulp-babel')
 const del         = require('del')
 
-let path = {
+let path = {
   style: {
     src: [
       'node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -38,26 +38,26 @@ function clean () {
 
 function styles() {
   return src(path.style.src, {sourcemaps: true})
-    .pipe(sass().on('error', sass.logError))
-    .pipe(concat('styles.css', {newLine: ''}))
-    .pipe(cleancss())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(dest(path.style.dest, {sourcemaps: '.'}))
+      .pipe(sass().on('error', sass.logError))
+      .pipe(concat('styles.css', {newLine: ''}))
+      .pipe(cleancss())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(dest(path.style.dest, {sourcemaps: '.'}))
 }
 
 function scripts() {
   return src(path.scripts.src, {sourcemaps: true})
-    .pipe(concat('scripts.js'))
-    .pipe(babel({presets: ['@babel/env']}))
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(dest(path.scripts.dest, {sourcemaps: '.'}))
+      .pipe(concat('scripts.js'))
+      .pipe(babel({presets: ['@babel/env']}))
+      .pipe(uglify())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(dest(path.scripts.dest, {sourcemaps: '.'}))
 }
 
 function images() {
   return src(path.images.src, {since: lastRun(images)} )
-    .pipe(imagemin())
-    .pipe(dest(path.images.dest))
+      .pipe(imagemin())
+      .pipe(dest(path.images.dest))
 }
 
 function browserSync() {
@@ -66,15 +66,17 @@ function browserSync() {
     server: { baseDir: "./" },
     port: 3000,
     files: [path.scripts.dest, path.style.dest]
-})
+  })
 }
 
 function watcher () {
   watch(path.style.src, {ignoreInitial: false}, styles)
   watch(path.scripts.src, {ignoreInitial: false}, scripts)
+  watch(path.images.src, {ignoreInitial: false}, images)
 }
 
 module.exports = {
   watch: parallel(browserSync, series(clean, images ,watcher)),
-  build: series(clean, parallel(styles, images))
+  build: series(clean, parallel(styles, images)),
+  clean
 }
