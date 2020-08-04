@@ -29,6 +29,14 @@ let path = {
   images: {
     src: ['src/asset/img/*'],
     dest: 'dist/asset/img'
+  },
+  fonts: {
+    src: ['src/asset/fonts/*'],
+    dest: 'dist/asset/fonts'
+  },
+  videos: {
+    src: ['src/asset/videos/*'],
+    dest: 'dist/asset/videos'
   }
 }
 
@@ -60,6 +68,16 @@ function images() {
       .pipe(dest(path.images.dest))
 }
 
+function fonts() {
+  return src(path.fonts.src, {since: lastRun(fonts)} )
+      .pipe(dest(path.fonts.dest))
+}
+
+function videos() {
+  return src(path.videos.src, {since: lastRun(fonts)} )
+      .pipe(dest(path.videos.dest))
+}
+
 function browserSync() {
   browsersync.init({
     watch: true,
@@ -73,10 +91,12 @@ function watcher () {
   watch(path.style.src, {ignoreInitial: false}, styles)
   watch(path.scripts.src, {ignoreInitial: false}, scripts)
   watch(path.images.src, {ignoreInitial: false}, images)
+  watch(path.fonts.src, {ignoreInitial: false}, fonts)
+  watch(path.videos.src, {ignoreInitial: false}, videos)
 }
 
 module.exports = {
   watch: parallel(browserSync, series(clean, images ,watcher)),
-  build: series(clean, parallel(styles, images)),
+  build: series(clean, parallel(styles, scripts, fonts, videos, images)),
   clean
 }
