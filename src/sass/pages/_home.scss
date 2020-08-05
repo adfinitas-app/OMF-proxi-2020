@@ -135,6 +135,19 @@ body {
 
 #q6 {
   display: none;
+  textarea {
+    border: none;
+    height: 193px;
+    width: 380px;
+    outline: 2px solid map_get($color, fifth);
+    -moz-outline-radius: 38px;
+    outline-offset: 15px;
+    font-family: Roboto;
+    font-size: 20px;
+    &::placeholder {
+      color: map_get($color, fourth_fade);
+    }
+  }
 }
 
 #q7 {
