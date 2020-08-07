@@ -367,6 +367,11 @@
               this.selectedFlagInner = this._createEl("div", {
                 "class": "iti__flag"
               }, this.selectedFlag);
+              if (this.options.separateDialCode) {
+                this.selectedDialCode = this._createEl("div", {
+                  "class": "iti__selected-dial-code"
+                }, this.selectedFlag);
+              }
               if (this.options.allowDropdown) {
                 // make element focusable and tab navigable
                 this.selectedFlag.setAttribute("tabindex", "0");
@@ -397,11 +402,6 @@
                 } else {
                   this.flagsContainer.appendChild(this.countryList);
                 }
-              }
-              if (this.options.separateDialCode) {
-                this.selectedDialCode = this._createEl("div", {
-                  "class": "iti__selected-dial-code"
-                }, this.selectedFlag);
               }
               if (this.options.hiddenInput) {
                 var hiddenInputName = this.options.hiddenInput;

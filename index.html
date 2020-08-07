@@ -292,7 +292,7 @@
                 <div class="row justify-content-center">
                   <div class="col-12">
                     <form name="other">
-                        <input type="text" name="text" placeholder="Autre. Précisez :">
+                        <input type="text" maxlength="50" name="text" placeholder="Autre. Précisez :">
                     </form>
                   </div>
                 </div>
@@ -490,14 +490,5 @@
     </div>
   </div>
   <script src="./dist/asset/js/scripts.min.js"></script>
-  <script>
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input, {
-      autoPlaceholder: "off",
-      preferredCountries: ['fr'],
-      separateDialCode: true,
-      utilsScript: "./dist/asset/js/scripts.min.js",
-    });
-  </script>
 </body>
 </html>
