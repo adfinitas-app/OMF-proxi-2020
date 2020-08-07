@@ -76,12 +76,22 @@ body {
 
 .form__page2 {
   border: none;
-  border-radius: 0px;
   border-bottom: 1px solid map_get($color, fifth);
+  border-radius: 0px;
   color: map_get($color, fourth);
   font-size: 20px;
   width: 100%;
 }
+
+.phone {
+  border: none;
+  &__opt {
+    font-size: 6px;
+    line-height: 8px;
+    text-transform: uppercase;
+  }
+}
+
 ::placeholder {
   color: map_get($color, fourth);;
   opacity: 1; /* Firefox */
@@ -127,6 +137,20 @@ body {
 
 #q4 {
   display: none;
+  input {
+    text-align: center;
+    width: 100%;
+    margin: 10px;
+    border: 1px solid map_get($color, fifth);
+    color: map_get($color, fourth);
+    background-color: map_get($color, third);
+    line-height: 25px;
+    @include button;
+    &::placeholder {
+      text-align: center;
+      color: map_get($color, fourth_fade);
+    }
+  }
 }
 
 #q5 {
@@ -164,12 +188,16 @@ body {
 
 #button__up {
   border: none;
-  background-color: map_get($color, third);
   display: none;
+  background: none;
 }
 
 #button__down {
   border: none;
-  background-color: map_get($color, third);
   display: none;
+  background: none;
+}
+
+.button__rep2 {
+  z-index: -1;
 }
