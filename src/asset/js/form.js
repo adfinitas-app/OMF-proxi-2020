@@ -2,6 +2,14 @@ var possible_anwser = [1, 5, 1, 4, 1, 0, 1, 1];
 var nb_anwser = [3, 5, 10, 4, 3, 0, 2, 2];
 var client_anwser = [0, 0, 0, 0, 0, 0, 0, 0];
 
+var input = document.querySelector("#phone");
+window.intlTelInput(input, {
+    autoPlaceholder: "off",
+    preferredCountries: ['fr'],
+    separateDialCode: true,
+    utilsScript: "./dist/asset/js/scripts.min.js",
+});
+
 function multiple(q) {
     var button = document.getElementsByClassName("anwser");
     var start = 0;
@@ -23,12 +31,10 @@ function click_button(a, q) {
 }
 
 function personnal_info() {
-    var form_info = $('form').serializeArray();
     if (document.forms["personal-info"]["phone"].value !== "") {
         var phone_number = $('.iti__selected-dial-code').html();
         $('#phone').val(phone_number + $('#phone').val());
     }
-    form_info["phone"] = phone_number + form_info["phone"];
 }
 
 function ValidateEmail(email)
@@ -42,7 +48,6 @@ function validate_form() {
     var gender = document.forms["personal-info"]["gender"];
     var lname = document.forms["personal-info"]["lastname"];
     var fname = document.forms["personal-info"]["firstname"];
-    var box = document.getElementsByClassName("form__page2");
     var check = 0;
 
     if (email.value === "" || !ValidateEmail(email)) {
@@ -88,5 +93,20 @@ function collect_data() {
     mapAnswers[5].push(document.forms["observation"]["text"].value);
     if (document.forms["other"]["text"].value !== "")
         mapAnswers[3].push(document.forms["other"]["text"].value);
-    console.log(mapAnswers);
+    sendData();
+}
+
+function AddZero(num) {
+    return (num >= 0 && num < 10) ? "0" + num : num + "";
+}
+
+function get_datetime () {
+    var now = new Date();
+    var strDateTime = [[AddZero(now.getDate()),
+        AddZero(now.getMonth() + 1),
+        now.getFullYear()].join("/"),
+        [AddZero(now.getHours()),
+            AddZero(now.getMinutes())].join(":"),
+        now.getHours() >= 12 ? "PM" : "AM"].join(" ");
+    return strDateTime;
 }
