@@ -15,8 +15,6 @@ function multiple(q) {
     var start = 0;
     for (var i = 0; i < q; i++)
         start = start + nb_anwser[i];
-    for (var j = 0; j < possible_anwser[q]; j++)
-        console.log(button[start + j].className);
 }
 
 function click_button(a, q) {
