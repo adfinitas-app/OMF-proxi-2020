@@ -201,3 +201,11 @@ body {
 .button__rep2 {
   z-index: -1;
 }
+
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1; // hide images
+  content:url("../../asset/img/aside_home.png") url("../../asset/img/aside_p1.png") url("../../asset/img/aside_p2.png")
+  url("../../asset/img/aside_p3.png") url("../../asset/img/aside_p4.png") url("../../asset/img/aside_p5.png")
+  url("../../asset/img/aside_p6.png") url("../../asset/img/aside_p7.png") url("../../asset/img/aside_p8.png")
+  url("../../asset/img/aside_p9.png");
+}
