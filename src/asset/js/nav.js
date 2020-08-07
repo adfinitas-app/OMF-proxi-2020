@@ -13,8 +13,9 @@ function change_page(curr, next) {
         $('#button__up').fadeOut(0);
     else
         $('#button__up').fadeIn(200);
-    if (next == 9) {
+    if (next === 9) {
         $('#button__down').fadeOut(0);
+        collect_data();
     }
     $(next_id).hide();
     $(next_id).fadeIn(200);
@@ -24,9 +25,12 @@ function change_page(curr, next) {
 
 $(document).ready(function(){
     $("#button__down").click(function () {
-        if (next_page + 1 < 10) {
-            next_page = next_page + 1;
-            change_page(curr_page, next_page);
+        if ((client_anwser[curr_page - 1] >= 1 && client_anwser[curr_page - 1] <= possible_anwser[curr_page - 1])
+            || document.forms["observation"]["text"].value !== "" || document.forms["other"]["text"].value !== "") {
+            if (next_page + 1 < 10) {
+                next_page = next_page + 1;
+                change_page(curr_page, next_page);
+            }
         }
     });
     $("#button__up").click(function () {
@@ -40,6 +44,9 @@ $(document).ready(function(){
         $("#home").fadeOut(0);
     });
     $("#button__rep2").click(function () {
+        if (validate_form() === false)
+            return false;
+        personnal_info();
         $("#q1").fadeIn(200);
         $("#perso").fadeOut(0);
         $("#button__down").fadeIn(200);

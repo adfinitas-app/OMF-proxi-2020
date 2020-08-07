@@ -6,6 +6,10 @@
   <title>Document</title>
   <link rel="stylesheet" href="dist/asset/css/styles.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+          integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+          crossorigin="anonymous">
+  </script>
 </head>
 <body>
   <div class="wrapper">
@@ -77,23 +81,35 @@
                   <div class="col-6">
                     <div class="row justify-content-center">
                       <div class="col-10 px-0">
-                        <form>
+                        <form id="personal-info" name="personal-info">
                           <div class="form-group">
-                            <input type="email" class="form__page2" id="exampleInputEmail1" placeholder="Email">
+                            <input name="email" type="email" class="form__page2" placeholder="Email" required>
                           </div>
                           <div class="form-group">
-                            <select class="form__page2" id="exampleFormControlSelect1">
-                              <option selected="true" disabled="disabled">Civilité</option>
-                              <option>Homme</option>
-                              <option>Femme</option>
-                              <option>Autre</option>
+                            <select name="gender" class="form__page2">
+                              <option selected="true" disabled="disabled" value="">Civilité</option>
+                              <option value="man">Homme</option>
+                              <option value="woman">Femme</option>
+                              <option value="other">Autre</option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <input type="lastname" class="form__page2" id="exampleInputLastname1" placeholder="Nom">
+                            <input name="lastname" type="text" minlength="1" class="form__page2" placeholder="Nom" required>
                           </div>
                           <div class="form-group">
-                            <input type="firstname" class="form__page2" id="exampleInputFirstname1" placeholder="Prénom">
+                            <input name="firstname" type="text" minlength="1" class="form__page2" placeholder="Prénom" required>
+                          </div>
+                          <div class="form-group row justify-content-center">
+                            <div class="col-11 form__page2 px-0">
+                              <div class="row">
+                                <div class="col-10">
+                                  <input id="phone" class="phone" name="phone" number>
+                                </div>
+                                <div class="phone__opt col-2 px-0">
+                                  Optionnel
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </form>
                       </div>
@@ -130,23 +146,17 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                        Non
-                    </button>
+                    <button id="btn_0-0" class="anwser button__passif" onclick="click_button(0, 0)">Non</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Oui, un peu
-                    </button>
+                    <button id="btn_0-1" class="anwser button__passif" onclick="click_button(1, 0)">Oui, un peu</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Oui, beaucoup
-                    </button>
+                    <button id="btn_0-2" class="anwser button__passif" onclick="click_button(2, 0)">Oui, beaucoup</button>
                   </div>
                 </div>
               </div>
@@ -171,37 +181,27 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-6">
-                    <button class="button__passif">
-                      Les jeunes
-                    </button>
+                    <button id="btn_1-0" class="anwser button__passif" onclick="click_button(3, 1)">Les jeunes</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-6">
-                    <button class="button__passif">
-                      Les femmes seules avec enfants
-                    </button>
+                    <button id="btn_1-1" class="anwser button__passif" onclick="click_button(4, 1)">Les femmes seules avec enfants</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-6">
-                    <button class="button__passif">
-                      Les familles
-                    </button>
+                    <button id="btn_1-2" class="anwser button__passif" onclick="click_button(5, 1)">Les familles</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-6">
-                    <button class="button__passif">
-                      Les personnes âgées isolées
-                    </button>
+                    <button id="btn_1-3" class="anwser button__passif" onclick="click_button(6, 1)">Les personnes âgées isolées</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-6">
-                    <button class="button__passif">
-                      Les personnes sans-abri
-                    </button>
+                    <button id="btn_1-4" class="anwser button__passif" onclick="click_button(7, 1)">Les personnes sans-abri</button>
                   </div>
                 </div>
               </div>
@@ -225,54 +225,34 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      1
-                    </button>
+                    <button id="btn_2-0" class="anwser button__passif" onclick="click_button(8, 2)">1</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      2
-                    </button>
+                    <button id="btn_2-1" class="anwser button__passif" onclick="click_button(9, 2)">2</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      3
-                    </button>
+                    <button id="btn_2-2" class="anwser button__passif" onclick="click_button(10, 2)">3</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      4
-                    </button>
+                    <button id="btn_2-3" class="anwser button__passif" onclick="click_button(11, 2)">4</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      5
-                    </button>
+                    <button id="btn_2-4" class="anwser button__passif" onclick="click_button(12, 2)">5</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      6
-                    </button>
+                    <button id="btn_2-5" class="anwser button__passif" onclick="click_button(13, 2)">6</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      7
-                    </button>
+                    <button id="btn_2-6" class="anwser button__passif" onclick="click_button(14, 2)">7</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      8
-                    </button>
+                    <button id="btn_2-7" class="anwser button__passif" onclick="click_button(15, 2)">8</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                      9
-                    </button>
+                    <button id="btn_2-8" class="anwser button__passif" onclick="click_button(16, 2)">9</button>
                   </div>
                   <div class="col-1 px-1">
-                    <button class="button__passif">
-                    10
-                    </button>
+                    <button id="btn_2-9" class="anwser button__passif" onclick="click_button(17, 2)">10</button>
                   </div>
                 </div>
               </div>
@@ -296,30 +276,24 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-12">
-                    <button class="button__passif">
-                      La distribution de colis alimentaires
-                    </button>
+                    <button id="btn_3-0" class="anwser button__passif" onclick="click_button(18, 3)">La distribution de colis alimentaires</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-12">
-                    <button class="button__passif">
-                      Soli’Malte, les maraudes « tout en un » : sociales, alimentaires et sanitaires
-                    </button>
+                    <button id="btn_3-1" class="anwser button__passif" onclick="click_button(19, 3)">Soli’Malte, les maraudes « tout en un » : sociales, alimentaires et sanitaires</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-12">
-                    <button class="button__passif">
-                      Secours et transport de malades du Covid-19
-                    </button>
+                    <button id="btn_3-2" class="anwser button__passif" onclick="click_button(20, 3)">Secours et transport de malades du Covid-19</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-12">
-                    <button class="button__passif">
-                      Autre. Précisez :
-                    </button>
+                    <form name="other">
+                        <input type="text" name="text" placeholder="Autre. Précisez :">
+                    </form>
                   </div>
                 </div>
               </div>
@@ -344,23 +318,17 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Oui, absolument
-                    </button>
+                    <button id="btn_4-0" class="anwser button__passif" onclick="click_button(21, 4)">Oui, absolument</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Non, pas vraiment
-                    </button>
+                    <button id="btn_4-1" class="anwser button__passif" onclick="click_button(22, 4)">Non, pas vraiment</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Je ne sais pas
-                    </button>
+                    <button id="btn_4-2" class="anwser button__passif" onclick="click_button(23, 4)">Je ne sais pas</button>
                   </div>
                 </div>
               </div>
@@ -384,10 +352,9 @@
                   </div>
                 </div>
                 <div class="row justify-content-center">
-                  <div class="col-5">
-                    <form>
-                      <textarea placeholder="Vos observations...">Vos observations...
-                      </textarea>
+                  <div class="col-6 pt-4">
+                    <form name="observation">
+                      <textarea name="text" placeholder="Vos observations..." id="btn_5-0" maxlength="250"></textarea>
                     </form>
                   </div>
                 </div>
@@ -413,16 +380,12 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Oui
-                    </button>
+                    <button id="btn_6-0" class="anwser button__passif" onclick="click_button(24, 6)">Oui</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-5">
-                    <button class="button__passif">
-                      Non
-                    </button>
+                    <button id="btn_6-1" class="anwser button__passif" onclick="click_button(25, 6)">Non</button>
                   </div>
                 </div>
               </div>
@@ -446,18 +409,12 @@
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-10">
-                    <button class="button__passif">
-                      Oui,<br>
-                      je participe à l’élan de solidarité et je soutiens les équipes de
-                      l’Ordre de Malte France pour prendre soin des plus fragiles.
-                    </button>
+                    <button id="btn_7-0" class="anwser button__passif" onclick="click_button(26, 7)">Oui,<br>je participe à l’élan de solidarité et je soutiens les équipes de l’Ordre de Malte France pour prendre soin des plus fragiles.</button>
                   </div>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-10">
-                    <button class="button__passif">
-                      Non
-                    </button>
+                    <button id="btn_7-1" class="anwser button__passif" onclick="click_button(27, 7)">Non</button>
                   </div>
                 </div>
               </div>
@@ -533,5 +490,14 @@
     </div>
   </div>
   <script src="dist/asset/js/scripts.min.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      autoPlaceholder: "off",
+      preferredCountries: ['fr'],
+      separateDialCode: true,
+      utilsScript: "dist/asset/js/scripts.min.js",
+    });
+  </script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     color: map_get($color, third);
     background-color: map_get($color, primary);
     line-height: 25px;
-    border: none;
+    border: 1px solid map_get($color, primary);
   }
   &__passif {
     @include button;
@@ -23,6 +23,14 @@
     color: map_get($color, fourth_fade);
     background-color: map_get($color, third);
     line-height: 25px;
+    &:hover {
+      @include button;
+      margin: 10px;
+      color: map_get($color, third);
+      background-color: map_get($color, primary);
+      line-height: 25px;
+      border: 1px solid map_get($color, primary);
+    }
   }
   &__donation {
     @include button;
