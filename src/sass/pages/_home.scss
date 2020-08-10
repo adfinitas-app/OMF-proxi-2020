@@ -3,6 +3,11 @@
   overflow-x: hidden;
 }
 
+#preloadbg {
+  display: none;
+  background-image: url('./../img/aside_p1.png');
+}
+
 body {
   font-family: 'Roboto Condensed';
   font-weight: 300;

@@ -7,6 +7,7 @@ function change_page(curr, next) {
     var progress_bar = 'progress-bar__custom-' + next;
     var x = document.getElementsByClassName('aside__page1');
     var bg_url = 'url(\'./dist/asset/img/aside_p' + next + '.png\')';
+    var preloadbg_url = 'url(\'./dist/asset/img/aside_p' + (next + 1) + '.png\')';
     document.getElementById('progress-bar').className = progress_bar;
     x[0].style.backgroundImage = bg_url;
     if (next === 1 || next === 9)
@@ -16,7 +17,8 @@ function change_page(curr, next) {
     if (next === 9) {
         $('#button__down').fadeOut(0);
         collect_data();
-    }
+    } else
+        document.getElementById('preloadbg').style.backgroundImage = preloadbg_url;
     $(next_id).hide();
     $(next_id).fadeIn(200);
     $(curr_id).fadeOut(0);
