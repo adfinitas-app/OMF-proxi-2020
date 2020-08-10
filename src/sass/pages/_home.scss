@@ -11,6 +11,7 @@
 body {
   font-family: 'Roboto Condensed';
   font-weight: 300;
+  overflow: hidden;
   &::after{
     position: absolute;
     z-index: -1;
@@ -37,6 +38,9 @@ body {
 }
 
 .aside {
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-flow: row wrap; /* Safari 6.1+ */
+  -webkit-align-content: end;
   &__page1 {
     padding: 0px;
     width: 100%;
@@ -90,12 +94,14 @@ body {
 }
 
 .form__page2 {
+  font-family: "Open Sans";
   border: none;
   border-bottom: 1px solid map_get($color, fifth);
   border-radius: 0px;
   color: map_get($color, fourth);
   font-size: 20px;
   width: 100%;
+  -webkit-appearance:none;
 }
 
 .phone {
@@ -175,13 +181,13 @@ body {
 #q6 {
   display: none;
   textarea {
-    border: none;
+    padding: 20px;
+    border:  2px solid map_get($color, fifth);
+    border-radius: 38px;
     height: 193px;
     width: 380px;
-    outline: 2px solid map_get($color, fifth);
-    -moz-outline-radius: 38px;
-    outline-offset: 15px;
     font-family: Roboto;
+    resize: none;
     font-size: 20px;
     &::placeholder {
       color: map_get($color, fourth_fade);
@@ -197,7 +203,7 @@ body {
   display: none;
 }
 
-#end {
+#q9 {
   display: none;
 }
 
