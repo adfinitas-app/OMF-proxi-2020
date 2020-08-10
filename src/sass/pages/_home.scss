@@ -8,14 +8,13 @@ body {
   font-weight: 300;
   &::after{
     position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    z-index: -1; // hide images
-    content: url("../img/aside_home.png") url("../img/aside_p1.png") url("../img/aside_p2.png")
-    url("../img/aside_p3.png") url("../img/aside_p4.png") url("../img/aside_p5.png")
-    url("../img/aside_p6.png") url("../img/aside_p7.png") url("../img/aside_p8.png")
-    url("../img/aside_p9.png");
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    content: url('./../img/aside_home.png') url('./../img/aside_p1.png') url('./../img/aside_p2.png')
+    url('./../img/aside_p3.png') url('./../img/aside_p4.png') url('./../img/aside_p5.png')
+    url('./../img/aside_p6.png') url('./../img/aside_p7.png') url('./../img/aside_p8.png')
+    url('./../img/aside_p9.png');
   }
 }
 
