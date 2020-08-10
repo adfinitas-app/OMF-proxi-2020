@@ -102,6 +102,18 @@ body {
   font-size: 20px;
   width: 100%;
   -webkit-appearance:none;
+  ::placeholder {
+    color: map_get($color, fourth);;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: map_get($color, fourth);;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: map_get($color, fourth);;
+  }
 }
 
 .phone {
@@ -111,19 +123,6 @@ body {
     line-height: 8px;
     text-transform: uppercase;
   }
-}
-
-::placeholder {
-  color: map_get($color, fourth);;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: map_get($color, fourth);;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: map_get($color, fourth);;
 }
 
 .end-page {
@@ -190,6 +189,12 @@ body {
     resize: none;
     font-size: 20px;
     &::placeholder {
+      color: map_get($color, fourth_fade);
+    }
+    &::-ms-input-placeholder {
+      color: map_get($color, fourth_fade);
+    }
+    &::-ms-input-placeholder {
       color: map_get($color, fourth_fade);
     }
   }
