@@ -8,6 +8,18 @@
   opacity: 0;
 }
 
+#gender {
+  &::placeholder {
+    color: map_get($color, fourth_fade);
+  }
+  &::-ms-input-placeholder {
+    color: map_get($color, fourth_fade);
+  }
+  &::-ms-input-placeholder {
+    color: map_get($color, fourth_fade);
+  }
+}
+
 body {
   font-family: 'Roboto Condensed';
   font-weight: 300;
@@ -55,6 +67,7 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     text-align: center;
+    z-index: 2000;
     a {
       color: map_get($color, third);
     }
@@ -102,18 +115,6 @@ body {
   font-size: 20px;
   width: 100%;
   -webkit-appearance:none;
-  ::placeholder {
-    color: map_get($color, fourth);;
-    opacity: 1; /* Firefox */
-  }
-
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: map_get($color, fourth);;
-  }
-
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: map_get($color, fourth);;
-  }
 }
 
 .phone {
@@ -130,7 +131,7 @@ body {
   &__title {
     font-size: 51px;
     color: map_get($color, primary);
-    line-height: 38px;
+    line-height: 45px;
     font-weight: bold;
     font-family: "Roboto Condensed";
   }
@@ -141,6 +142,16 @@ body {
 }
 #perso {
   display: none;
+  ::placeholder {
+    color: map_get($color, fourth);
+    opacity: 1; /* Firefox */
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: map_get($color, fourth);
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: map_get($color, fourth);
+  }
 }
 
 #q1 {
@@ -157,7 +168,7 @@ body {
 
 #q4 {
   display: none;
-  input {
+  textarea {
     text-align: center;
     width: 100%;
     margin: 10px;
@@ -170,6 +181,7 @@ body {
       text-align: center;
       color: map_get($color, fourth_fade);
     }
+    resize: none;
   }
 }
 

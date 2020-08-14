@@ -22,7 +22,7 @@ function click_button(a, q) {
     if (button[a].className === 'anwser button__passif' && client_anwser[q] < possible_anwser[q]) {
         button[a].className = 'anwser button__active';
         client_anwser[q]++;
-    } else if (button[a].className === 'anwser button__active' && client_anwser[q] == possible_anwser[q]){
+    } else if (button[a].className === 'anwser button__active'){
         button[a].className = 'anwser button__passif';
         client_anwser[q]--;
     }
@@ -65,11 +65,6 @@ function validate_form() {
         check++;
     }
     if (check > 0) {
-        setTimeout(function () {
-           var box = document.forms["personal-info"];
-           for (var i = 0; i < 4; i++)
-            box[i].className = 'form__page2';
-           }, 1000)
         return false;
     } else {
         return true;

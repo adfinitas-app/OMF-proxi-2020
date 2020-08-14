@@ -28,7 +28,7 @@ function change_page(curr, next) {
 $(document).ready(function(){
     $("#button__down").click(function () {
         if ((client_anwser[curr_page - 1] >= 1 && client_anwser[curr_page - 1] <= possible_anwser[curr_page - 1])
-            || document.forms["observation"]["text"].value !== "" || document.forms["other"]["text"].value !== "") {
+            || ($.trim($("#btn_5-0").val()) && curr_page === 6) || ($.trim($("#autre").val()) && curr_page === 4)) {
             if (next_page + 1 < 10) {
                 next_page = next_page + 1;
                 change_page(curr_page, next_page);
