@@ -1,11 +1,18 @@
 .wrapper {
-  overflow-y: hidden;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #preloadbg {
-  background-image: url('./../img/aside_p1.png');
-  opacity: 0;
+  img {
+    opacity: 0;
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 0px;
+    width: 0px;
+  }
 }
 
 #gender {
@@ -23,8 +30,7 @@
 body {
   font-family: 'Roboto Condensed';
   font-weight: 300;
-  overflow: hidden;
-  &::after{
+  /*&::after{
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -33,7 +39,7 @@ body {
     url('./../img/aside_p3.png') url('./../img/aside_p4.png') url('./../img/aside_p5.png')
     url('./../img/aside_p6.png') url('./../img/aside_p7.png') url('./../img/aside_p8.png')
     url('./../img/aside_p9.png');
-  }
+  }*/
 }
 
 .logo {
@@ -46,28 +52,37 @@ body {
 }
 
 .header {
-  height: 15%;
+  height: 100px !important;
+  min-height: 100px !important;
+  background-color: map_get($color, third);
 }
 
 .aside {
-  display: -webkit-flex; /* Safari */
-  -webkit-flex-flow: row wrap; /* Safari 6.1+ */
-  -webkit-align-content: end;
-  &__page1 {
-    padding: 0px;
-    width: 100%;
+  img {
+    position: fixed;
+    right: 0;
+    top: 0;
     height: 100vh;
-    background-image: url("../img/aside_home.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    width: 33vw;
+    z-index: 1;
   }
   &__link {
     font-family: Roboto;
     font-size: 10px;
     text-transform: uppercase;
     text-align: center;
-    z-index: 2000;
+    .link1 {
+      z-index: 2000;
+      position: fixed;
+      bottom: 0;
+      right: 16vw;
+    }
+    .link2 {
+      z-index: 2000;
+      position: fixed;
+      bottom: 0;
+      right: 5vw;
+    }
     a {
       color: map_get($color, third);
     }
@@ -77,7 +92,6 @@ body {
 .home-page {
   color: map_get($color, fourth);
   text-align: center;
-  height: 90%;
   h1 {
     font-weight: bold;
     font-size: 51px;
@@ -95,7 +109,6 @@ body {
   font-size: 20px;
   font-family: Roboto;
   text-align: center;
-  height: 90%;
   &__number {
     color: map_get($color, third);
     background-color: map_get($color, primary);
@@ -137,9 +150,6 @@ body {
   }
 }
 
-#home {
-  display: block;
-}
 #perso {
   display: none;
   ::placeholder {
@@ -238,4 +248,23 @@ body {
 
 .button__rep2 {
   z-index: -1;
+}
+
+.min-height {
+  height: 550px;
+  min-height: 550px;
+}
+
+footer {
+}
+
+#button__rep1 {
+  width: 280px;
+}
+
+#arrow_bottom {
+  width: 66vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

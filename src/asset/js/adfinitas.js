@@ -15,18 +15,19 @@ function sendData() {
                 "civility": gender,
                 "phone": phone,
                 "datetime": get_datetime(),
-                'quest_1': mapAnswers[0] ,
-                'quest_2': mapAnswers[1] ,
-                'quest_3': mapAnswers[2] ,
-                'quest_4': mapAnswers[3] ,
-                'quest_5': mapAnswers[4] ,
-                'quest_6': mapAnswers[5] ,
-                'quest_7': mapAnswers[6] ,
-                'quest_8': mapAnswers[7] ,
+                'quest_1': mapAnswers[0][0] ,
+                'quest_2': JSON.stringify(mapAnswers[1]) ,
+                'quest_3': mapAnswers[2][0] ,
+                'quest_4': JSON.stringify(mapAnswers[3]) ,
+                'quest_5': mapAnswers[4][0] ,
+                'quest_6': mapAnswers[5][0] ,
+                'quest_7': mapAnswers[6][0] ,
+                'quest_8': mapAnswers[7][0] ,
             }
         },
     }
-    makeCorsRequest(payload);
+    console.log(payload)
+    //makeCorsRequest(payload);
 }
 
 function createCORSRequest(method, url) {
