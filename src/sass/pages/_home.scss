@@ -233,12 +233,40 @@ body {
   border: none;
   display: none;
   background: none;
+  p {
+    display: none;
+    font-size: 30px;
+    font-family: "Roboto Condensed";
+    text-transform: uppercase;
+    border: 1px solid map_get($color, fifth);
+    border-radius: 38px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: map_get($color, primary);
+  }
+  img {
+    display: block;
+  }
 }
 
 #button__down {
   border: none;
   display: none;
   background: none;
+  p {
+    display: none;
+    font-size: 30px;
+    font-family: "Roboto Condensed";
+    text-transform: uppercase;
+    border: 1px solid map_get($color, fifth);
+    border-radius: 38px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: map_get($color, primary);
+  }
+  img {
+    display: block;
+  }
 }
 
 .button__rep2 {
@@ -307,5 +335,32 @@ footer {
   }
   #preloadbg {
     display: none;
+  }
+  #button__up {
+    p {
+      display: block;
+      &:hover {
+        background-color: map_get($color, primary);
+        color: map_get($color, third);
+        border: 1px solid map_get($color, primary);
+      }
+    }
+    img {
+      display: none;
+    }
+  }
+
+  #button__down {
+    p {
+      display: block;
+      &:hover {
+        background-color: map_get($color, primary);
+        color: map_get($color, third);
+        border: 1px solid map_get($color, primary);
+      }
+    }
+    img {
+      display: none;
+    }
   }
   }
