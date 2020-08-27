@@ -78,8 +78,8 @@ body {
       right: 5vw;
     }
     a {
-      color: map_get($color, third);
       cursor: pointer;
+      color: map_get($color, third);
     }
   }
 }
@@ -246,8 +246,8 @@ body {
 }
 
 .min-height {
-  height: 550px;
-  min-height: 550px;
+  height: 500px;
+  min-height: 500px;
 }
 
 footer {
@@ -292,7 +292,6 @@ footer {
         color: map_get($color, fourth);
       }
       a:hover {
-        color: blue;
       }
     }
   }
