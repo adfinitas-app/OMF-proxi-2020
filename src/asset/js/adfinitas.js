@@ -26,7 +26,7 @@ function sendData() {
             }
         },
     }
-    //makeCorsRequest(payload);
+    makeCorsRequest(payload);
 }
 
 function createCORSRequest(method, url) {
