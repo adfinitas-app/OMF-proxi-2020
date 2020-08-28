@@ -42,9 +42,10 @@ body {
 }
 
 .header {
-  height: 100px !important;
-  min-height: 100px !important;
+  height: auto !important;
+  min-height: auto !important;
   background-color: map_get($color, third);
+  padding-bottom: 40px;
 }
 
 .aside {
@@ -335,6 +336,7 @@ footer {
       display: none;
     }
     &__link {
+      padding-bottom: 8px;
       font-family: Roboto;
       font-size: 15px;
       text-transform: uppercase;
@@ -386,7 +388,6 @@ footer {
       display: none;
     }
   }
-
   #button__down {
     p {
       display: block;
@@ -400,4 +401,24 @@ footer {
       display: none;
     }
   }
+}
+
+@media (max-width: 576px) {
+  .space {
+    height: 96px;
   }
+  .header {
+    height: auto !important;
+    min-height: auto !important;
+    background-color: map_get($color, third);
+  }
+}
+
+.min-height {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.page-container {
+  min-height: 65vh;
+}
