@@ -32,6 +32,8 @@ $(document).ready(function(){
                 next_page = next_page + 1;
                 change_page(curr_page, next_page);
             }
+        } else {
+            $(".control-input").css("opacity", "1");
         }
     });
     $("#button__up").click(function () {
