@@ -91,12 +91,13 @@ body {
     font-weight: bold;
     font-size: 51px;
     color: map_get($color, primary);
-    line-height: 38px;
+    line-height: 49px;
+    margin: 0px;
   }
   &__desc {
     font-size: 27px;
     font-weight: bold;
-    line-height: 20px;
+    line-height: 25px;
   }
 }
 
@@ -157,6 +158,12 @@ body {
   ::-ms-input-placeholder { /* Microsoft Edge */
     color: map_get($color, fourth);
   }
+  @media (max-width: 576px) {
+    .min-height {
+      height: 550px;
+      min-height: 550px;
+    }
+  }
 }
 
 #q1 {
@@ -165,10 +172,22 @@ body {
 
 #q2 {
   display: none;
+  @media (max-width: 576px) {
+    .min-height {
+      height: 650px;
+      min-height: 650px;
+    }
+  }
 }
 
 #q3 {
   display: none;
+  @media (max-width: 576px) {
+    .min-height {
+      height: 1000px;
+      min-height: 1000px;
+    }
+  }
 }
 
 #q4 {
@@ -187,6 +206,12 @@ body {
       color: map_get($color, fourth_fade);
     }
     resize: none;
+  }
+  @media (max-width: 576px) {
+    .min-height {
+      height: 800px;
+      min-height: 800px;
+    }
   }
 }
 
@@ -223,10 +248,22 @@ body {
 
 #q8 {
   display: none;
+  @media (max-width: 576px) {
+    .min-height {
+      height: 700px;
+      min-height: 700px;
+    }
+  }
 }
 
 #q9 {
   display: none;
+  @media (max-width: 576px) {
+    .min-height {
+      height: 700px;
+      min-height: 700px;
+    }
+  }
 }
 
 #button__up {
@@ -274,8 +311,8 @@ body {
 }
 
 .min-height {
-  height: 500px;
-  min-height: 500px;
+  height: 520px;
+  min-height: 520px;
 }
 
 footer {

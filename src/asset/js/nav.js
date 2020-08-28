@@ -19,6 +19,7 @@ function change_page(curr, next) {
     }
     $(next_id).hide();
     $(next_id).fadeIn(200);
+    $(next_id).css("display", "flex");
     $(curr_id).fadeOut(0);
     curr_page = next_page;
 }
