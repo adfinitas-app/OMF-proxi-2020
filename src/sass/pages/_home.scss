@@ -51,6 +51,7 @@ body {
 .aside {
   img {
     display: block;
+    object-fit: cover;
     @media (max-width: 576px) {
       display: none;
     }
