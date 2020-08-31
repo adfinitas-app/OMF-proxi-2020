@@ -66,18 +66,13 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     text-align: center;
-    .link1 {
-      z-index: 2000;
-      position: fixed;
-      bottom: 0;
-      right: 16vw;
-    }
-    .link2 {
-      z-index: 2000;
-      position: fixed;
-      bottom: 0;
-      right: 5vw;
-    }
+    position: fixed;
+    z-index: 2000;
+    left: 67vw;
+    bottom: 0;
+    width: 33vw;
+    display: flex;
+    justify-content: space-around;
     a {
       cursor: pointer;
       color: map_get($color, third);
@@ -341,18 +336,18 @@ footer {
       font-size: 15px;
       text-transform: uppercase;
       text-align: center;
+      position: static;
+      z-index: 2000;
+      bottom: 0;
+      width: 100vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       .link1 {
-        z-index: 2000;
-        position: static;
-        bottom: 0;
-        left: 0vw;
-        right: auto;
+        width: 100vw;
       }
       .link2 {
-        z-index: 2000;
-        position: static;
-        bottom: 0;
-        right: 0vw;
+        width: 100vw;
       }
       a {
         cursor: pointer;

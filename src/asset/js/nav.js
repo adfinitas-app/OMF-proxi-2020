@@ -31,6 +31,7 @@ $(document).ready(function(){
                 next_page = next_page + 1;
                 change_page(curr_page, next_page);
             }
+            $(".control-input").css("opacity", "0")
         } else {
             $(".control-input").css("opacity", "1");
         }
