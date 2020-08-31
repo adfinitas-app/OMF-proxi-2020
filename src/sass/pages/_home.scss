@@ -63,13 +63,13 @@ body {
   }
   &__link {
     font-family: Roboto;
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     text-align: center;
     position: fixed;
-    z-index: 2000;
+    z-index: 500;
     left: 67vw;
-    bottom: 0;
+    bottom: 1vh;
     width: 33vw;
     display: flex;
     justify-content: space-around;
@@ -337,7 +337,7 @@ footer {
       text-transform: uppercase;
       text-align: center;
       position: static;
-      z-index: 2000;
+      z-index: 500;
       bottom: 0;
       width: 100vw;
       display: flex;
